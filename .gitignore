@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pkl
+
+# Data files (large, generated at runtime)
+*.csv
+*.log
+
+# Docker
+*.env
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+scada/grid_health_graph.png
