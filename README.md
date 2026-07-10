@@ -75,9 +75,9 @@ pip install -r requirements.txt
 [x] Power grid simulation using IEEE 13-bus test feeder
 [x] SCADA/ICS honeypot simulation with Modbus protocol
 [x] Network intrusion detection with ICS-specific rules
-[ ] ML-based anomaly detection for cyber-physical attacks
-[ ] ML-based energy theft detection
-[ ] Deep learning (LSTM Autoencoder) for time-series anomaly detection
+[x] ML-based anomaly detection for cyber-physical attacks
+[x] ML-based energy theft detection
+[x] Deep learning (LSTM Autoencoder) for time-series anomaly detection
 [ ] Automated load shedding & self-healing simulation
 [ ] Real-time monitoring dashboard
 [ ] DevSecOps security scanning pipeline
