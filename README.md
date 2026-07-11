@@ -79,7 +79,7 @@ pip install -r requirements.txt
 [x] ML-based energy theft detection
 [x] Deep learning (LSTM Autoencoder) for time-series anomaly detection
 [x] Automated load shedding & self-healing simulation
-[ ] Real-time monitoring dashboard
+[x] Real-time monitoring dashboard
 [ ] DevSecOps security scanning pipeline
 [ ] Compliance automation (NERC CIP / IEC 62351 checklist)
 > This checklist will be updated as each phase is completed.
