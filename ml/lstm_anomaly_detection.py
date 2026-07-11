@@ -1,5 +1,5 @@
 # ml/lstm_anomaly_detection.py
-# Phase 4B: LSTM Autoencoder for time-series anomaly detection
+# LSTM Autoencoder for time-series anomaly detection
 
 import numpy as np
 import pandas as pd

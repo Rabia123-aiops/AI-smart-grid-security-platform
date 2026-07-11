@@ -1,5 +1,5 @@
 # resilience/resilience_engine.py
-# Phase 5: Grid Resilience & Automated Recovery (Steps 31-35)
+# Grid Resilience & Automated Recovery
 # Reads live grid readings and automatically reacts to problems:
 # load shedding, fault isolation, self-healing, predictive maintenance
 
@@ -20,7 +20,7 @@ def log_event(message):
         f.write(line + "\n")
 
 
-# Step 31: Automated load shedding
+# Automated load shedding
 def load_shedding_check(voltage, current, step):
     if voltage > VOLTAGE_THRESHOLD_HIGH or current > CURRENT_THRESHOLD_HIGH:
         log_event("Step " + str(step) + ": THRESHOLD EXCEEDED (V=" + str(round(voltage, 2)) +
@@ -29,7 +29,7 @@ def load_shedding_check(voltage, current, step):
     return False
 
 
-# Step 32: Fault detection and isolation
+# Fault detection and isolation
 def fault_isolation(voltage, current, step, prev_current):
     spike = abs(current - prev_current)
     if spike > 15:
@@ -39,13 +39,13 @@ def fault_isolation(voltage, current, step, prev_current):
     return False
 
 
-# Step 33: Self-healing (backup feeder activation)
+# Self-healing (backup feeder activation)
 def self_healing(step, isolated):
     if isolated:
         log_event("Step " + str(step) + ": SELF-HEALING - activating backup feeder path to restore power")
 
 
-# Step 34: Predictive maintenance (trend-based)
+# Predictive maintenance (trend-based)
 def predictive_maintenance(readings, step):
     if len(readings) >= 10:
         recent = readings[-10:]
@@ -55,7 +55,7 @@ def predictive_maintenance(readings, step):
                        str(round(trend, 3)) + ")")
 
 
-# Step 35: Main loop - processes all readings and logs every event
+# Main loop - processes all readings and logs every event
 def main():
     df = pd.read_csv("../opendss/grid_readings.csv")
     print("Loaded " + str(len(df)) + " readings from grid_readings.csv")

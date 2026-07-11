@@ -1,5 +1,5 @@
-# scada/plot_grid.py
-# Phase 2: Step 14 - Visualize grid health
+# opendss/plot_grid.py
+# Visualize grid health
 # Reads grid_readings.csv and saves a graph as grid_health_graph.png
 
 import pandas as pd

@@ -1,5 +1,5 @@
-# scada/grid_model.py
-# Phase 2: Grid Simulation Layer (Steps 9-13)
+# opendss/grid_model.py
+# Grid Simulation Layer
 # This script loads a simulated power grid, reads voltage/current values,
 # injects occasional anomalies, and saves everything to a CSV file.
 

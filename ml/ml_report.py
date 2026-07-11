@@ -1,5 +1,5 @@
 # ml/ml_report.py
-# Phase 4: Generate visual confusion matrix for presentation
+# Generate visual confusion matrix for presentation
 
 import pandas as pd
 import joblib

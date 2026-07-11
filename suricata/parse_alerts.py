@@ -1,4 +1,4 @@
-# scada/parse_alerts.py
+# suricata/parse_alerts.py
 # Reads Suricata's eve.json log and summarizes detected alerts
 
 import json

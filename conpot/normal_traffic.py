@@ -1,4 +1,4 @@
-# scada/normal_traffic.py
+# conpot/normal_traffic.py
 # Sends legitimate Modbus read requests to Conpot (simulated PLC)
 
 from pymodbus.client import ModbusTcpClient

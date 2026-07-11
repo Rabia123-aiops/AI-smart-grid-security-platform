@@ -1,4 +1,4 @@
-# scada/malicious_traffic.py
+# conpot/malicious_traffic.py
 # Simulates an attack: rapid unauthorized write attempts to the PLC
 
 from pymodbus.client import ModbusTcpClient

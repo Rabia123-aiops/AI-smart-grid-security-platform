@@ -1,5 +1,5 @@
 # ml/energy_theft_detection.py
-# Phase 4: Synthetic smart-meter data + theft detection model
+# Synthetic smart-meter data + theft detection model
 
 import pandas as pd
 import numpy as np

@@ -1,5 +1,5 @@
 # ml/ml_models.py
-# Phase 4: Isolation Forest (unsupervised) + Random Forest (supervised)
+# Isolation Forest (unsupervised) + Random Forest (supervised)
 # anomaly detection on grid sensor data
 
 import pandas as pd
