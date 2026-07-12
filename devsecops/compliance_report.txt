@@ -1,0 +1,12 @@
+Compliance Report - Generated 2026-07-12 11:28:34
+==================================================
+[PASS] Suricata rules file exists
+[PASS] .gitignore exists (prevents secrets from being committed)
+[PASS] LICENSE file exists
+[PASS] README documentation exists
+[PASS] ML models are saved (audit trail of trained models)
+[PASS] Resilience event logging is configured
+[PASS] Bandit security scan report exists
+[PASS] Dependency vulnerability report exists
+
+Summary: 8/8 checks passed
