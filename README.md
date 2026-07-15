@@ -196,3 +196,248 @@ AI-smart-grid-security-platform/
 ├── LICENSE
 └── README.md
 ```
+---
+
+# ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Rabia123-aiops/AI-smart-grid-security-platform.git
+cd AI-smart-grid-security-platform
+```
+
+Create and activate a Python virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install the required Python packages:
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Verify Docker installation:
+
+```bash
+docker --version
+docker-compose --version
+```
+
+---
+
+# ▶️ Running the Prototype
+
+## Step 1 – Start Docker Services
+
+```bash
+docker-compose up -d
+```
+
+Verify all containers are running:
+
+```bash
+docker ps
+```
+
+The following services should be running:
+
+- Conpot Honeypot
+- Prometheus
+- Grafana
+
+---
+
+## Step 2 – Run the Smart Grid Simulation
+
+```bash
+cd opendss
+
+python3 grid_model.py
+```
+
+This script loads the IEEE 13-Bus feeder and continuously generates simulated voltage and current measurements.
+
+---
+
+## Step 3 – (Optional) Generate Normal SCADA Traffic
+
+```bash
+cd conpot
+
+python3 normal_traffic.py
+```
+
+This script generates legitimate Modbus read requests to the simulated PLC. It is useful for comparing normal operational behaviour with malicious traffic.
+
+> **Important:** Ensure the Docker containers are running before executing this script.
+
+---
+
+## Step 4 – Generate Malicious Modbus Traffic
+
+```bash
+cd conpot
+
+python3 malicious_traffic.py
+```
+
+This script sends rapid unauthorised Modbus write requests against the simulated PLC to demonstrate cyberattack detection.
+
+---
+
+## Step 5 – Monitor and Parse Suricata Alerts
+
+Start Suricata:
+
+```bash
+sudo suricata -c /etc/suricata/suricata.yaml -i lo
+```
+
+Parse detected alerts:
+
+```bash
+cd suricata
+
+python3 parse_alerts.py
+```
+
+The parser extracts security events from Suricata logs for reporting and dashboard visualisation.
+
+---
+
+## Step 6 – Execute the AI Models
+
+```bash
+cd ml
+
+python3 ml_models.py
+
+python3 energy_theft_detection.py
+
+python3 lstm_anomaly_detection.py
+```
+
+The AI module performs:
+
+- Isolation Forest anomaly detection
+- Random Forest classification
+- Synthetic energy theft detection
+- LSTM Autoencoder sequence anomaly detection
+
+---
+
+## Step 7 – Execute Grid Resilience Automation
+
+```bash
+cd resilience
+
+python3 resilience_engine.py
+```
+
+The resilience engine simulates:
+
+- Load shedding
+- Fault isolation
+- Self-healing
+
+Generated events are recorded in:
+
+```text
+resilience/resilience_events.log
+```
+
+---
+
+## Step 8 – Start the Prometheus Exporter
+
+```bash
+cd prometheus
+
+python3 prometheus_exporter.py
+```
+
+The exporter publishes simulated smart-grid metrics for Prometheus.
+
+---
+
+## Step 9 – Launch the Flask Dashboard
+
+```bash
+cd dashboard
+
+python3 app.py
+```
+
+The Flask dashboard displays:
+
+- Live grid measurements
+- Security alerts
+- AI detection results
+- Grid resilience events
+
+---
+
+## Step 10 – Run the Compliance Verification
+
+```bash
+cd devsecops
+
+python3 compliance_check.py
+```
+
+The compliance script verifies the availability of project artefacts, security reports, and implementation evidence.
+
+---
+
+# 🌐 Local Services
+
+| Service | URL | Purpose |
+|----------|-----|----------|
+| Flask Dashboard | http://127.0.0.1:5000 | Live Smart Grid Monitoring |
+| Grafana | http://127.0.0.1:3000 | Dashboard Visualisation |
+| Prometheus | http://127.0.0.1:9090 | Metrics Collection |
+| Conpot (HTTP) | http://127.0.0.1:80 | Simulated PLC Web Interface |
+| Conpot (Modbus) | 127.0.0.1:502 | Modbus TCP Service |
+
+---
+
+# 📦 Prototype Execution Workflow
+
+```text
+Start Docker Containers
+          │
+          ▼
+Run Grid Simulation
+          │
+          ▼
+(Optional) Generate Normal Traffic
+          │
+          ▼
+Generate Malicious Traffic
+          │
+          ▼
+Suricata Detects Threats
+          │
+          ▼
+Parse Security Alerts
+          │
+          ▼
+Run AI Models
+          │
+          ▼
+Execute Resilience Engine
+          │
+          ▼
+Publish Metrics to Prometheus
+          │
+          ▼
+Grafana & Flask Dashboards
+          │
+          ▼
+Run Compliance Verification
+```
