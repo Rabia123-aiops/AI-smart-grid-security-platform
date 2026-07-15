@@ -13,7 +13,32 @@ The assessment brief required the design and implementation of an AI-driven smar
 
 **Author:** Rabia Shehzadi  
 **Email:** rabiashehzadi878@gmail.com
+## 📑 Table of Contents
 
+- [🎯 Why This Project](#-why-this-project)
+- [📖 What Actually Happens](#-what-actually-happens)
+- [🏗️ Platform Architecture](#️-platform-architecture)
+- [🔄 End-to-End Data Flow](#-end-to-end-data-flow)
+- [🔐 Prototype OT/IT Convergence](#-prototype-otit-convergence)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📁 Repository Layout](#-repository-layout)
+- [⚙️ Installation](#️-installation)
+- [▶️ Running the Prototype](#️-running-the-prototype)
+- [🌐 Local Services](#-local-services)
+- [📦 Prototype Execution Workflow](#-prototype-execution-workflow)
+- [📸 Results and Implementation Evidence](#-results-and-implementation-evidence)
+- [📊 Monitoring and Visualisation](#-monitoring-and-visualisation)
+- [🔐 DevSecOps Implementation](#-devsecops-implementation)
+- [📋 Compliance Support and Audit Evidence](#-compliance-support-and-audit-evidence)
+- [✅ Implementation Achievements](#-implementation-achievements)
+- [⚠️ Project Limitations](#️-project-limitations)
+- [🚀 Future Improvements](#-future-improvements)
+- [🏢 Enterprise Deployment Scenario](#-enterprise-deployment-scenario)
+- [📖 Lessons Learned](#-lessons-learned)
+- [📚 References](#-references)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [📄 License](#-license)
+- [⭐ Final Project Summary](#-final-project-summary)
 ---
 
 ## 🎯 Why This Project
