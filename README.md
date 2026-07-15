@@ -441,3 +441,189 @@ Grafana & Flask Dashboards
           ▼
 Run Compliance Verification
 ```
+---
+
+# 📸 Results and Implementation Evidence
+
+The following implementation evidence was generated during prototype testing on the Ubuntu laboratory environment. The screenshots demonstrate the successful integration of the smart-grid simulation, SCADA honeypot, intrusion detection, artificial intelligence, resilience automation, and monitoring components.
+
+---
+
+# ⚡ Smart Grid Simulation
+
+The OpenDSS simulation successfully loads the IEEE 13-Bus feeder and continuously generates simulated voltage and current measurements.
+
+Controlled abnormal operating conditions are introduced into the simulation so that the AI models can identify unusual grid behaviour without affecting any real electrical infrastructure.
+
+### Grid Simulation
+
+![Grid Simulation Terminal](docs/screenshots/grid-simulation-terminal.png)
+
+### Grid Anomaly Detection
+
+![Grid Anomaly Detection](docs/screenshots/grid-anomaly-detection.png)
+
+### Grid Health Monitoring
+
+![Grid Health Graph](docs/screenshots/grid-health-graph.png)
+
+---
+
+# 🏭 SCADA / ICS Honeypot
+
+Conpot simulates an industrial PLC supporting Modbus TCP services.
+
+The project demonstrates both:
+
+- Normal Modbus communication
+- Malicious Modbus attack traffic
+
+### Conpot Startup
+
+![Conpot Startup](docs/screenshots/conpot-startup-command.png)
+
+### Conpot Services
+
+![Conpot Running](docs/screenshots/conpot-servers-started.png)
+
+### Attack Received
+
+![Conpot Attack](docs/screenshots/conpot-received-attack.png)
+
+### Malicious Modbus Traffic
+
+![Malicious Traffic](docs/screenshots/scada-malicious-traffic-attack.png)
+
+---
+
+# 🚨 Suricata Intrusion Detection
+
+Suricata continuously monitors industrial Modbus traffic and applies the custom detection rule defined in:
+
+```text
+suricata/local.rules
+```
+
+During attack simulation, Suricata successfully generated security alerts that were parsed and summarised for further analysis.
+
+### Suricata Engine
+
+![Suricata Engine](docs/screenshots/suricata-setup-engine-started.png)
+
+### Alert Detection
+
+![Suricata Alert](docs/screenshots/suricata-alert-detected-full.png)
+
+### Alert Summary
+
+![Suricata Summary](docs/screenshots/suricata-alert-summary.png)
+
+---
+
+# 🤖 Machine Learning Results
+
+The AI module combines unsupervised learning, supervised learning, and deep learning techniques to analyse simulated smart-grid data.
+
+---
+
+## Isolation Forest
+
+Prototype testing produced:
+
+- Total simulated samples analysed: **109**
+- Anomalies detected: **11**
+
+Isolation Forest detects abnormal operating behaviour without requiring labelled attack data.
+
+---
+
+## Random Forest
+
+On the labelled prototype evaluation dataset:
+
+- Accuracy = **100%**
+- Precision = **100%**
+- Recall = **100%**
+- F1-score = **100%**
+
+These results represent performance on the prototype evaluation dataset used in this project and should not be interpreted as guaranteed real-world performance.
+
+![Isolation Forest and Random Forest](docs/screenshots/ml-isolation-random-forest.png)
+
+---
+
+# ⚡ Energy Theft Detection
+
+The synthetic smart-meter dataset contains:
+
+- **500 customer records**
+- **30 labelled theft cases**
+
+During prototype evaluation:
+
+- **40 potentially suspicious customers were identified**
+- **Overall classification accuracy: 98%**
+
+The identified customers represent records that would require additional investigation before confirming electricity theft.
+
+![Energy Theft Detection](docs/screenshots/ml-energy-theft-detection.png)
+
+The generated confusion matrix is available in:
+
+```text
+ml/energy_theft_confusion_matrix.png
+```
+
+---
+
+# 🧠 LSTM Autoencoder
+
+Unlike Random Forest, the LSTM Autoencoder analyses sequential time-series behaviour.
+
+Prototype testing produced:
+
+- Total sequences analysed: **99**
+- Anomalous sequences detected: **5**
+
+An anomaly is identified whenever the reconstruction error exceeds the learned threshold.
+
+![LSTM Results](docs/screenshots/ml-lstm-anomaly-results.png)
+
+---
+
+# ⚙️ Grid Resilience Engine
+
+The resilience engine demonstrates automated response actions following abnormal grid behaviour.
+
+Implemented resilience actions include:
+
+- Load shedding
+- Fault isolation
+- Backup feeder activation
+- Event logging
+
+All resilience actions are simulated and do not operate physical substations or electrical breakers.
+
+![Resilience Event Log](docs/screenshots/resilience-event-log.png)
+
+Generated event log:
+
+```text
+resilience/resilience_events.log
+```
+
+---
+
+# ✅ Prototype Summary
+
+| Component | Prototype Result |
+|-----------|------------------|
+| Smart Grid | IEEE 13-Bus simulation running successfully |
+| SCADA | Conpot simulated PLC operational |
+| Modbus | Normal and malicious traffic demonstrated |
+| Suricata | Industrial attacks successfully detected |
+| Isolation Forest | 11 anomalies detected from 109 samples |
+| Random Forest | 100% accuracy on prototype evaluation dataset |
+| Energy Theft | 98% accuracy using synthetic customer dataset |
+| LSTM | 5 anomalous sequences detected from 99 sequences |
+| Resilience | Load shedding, fault isolation and backup feeder events logged |
