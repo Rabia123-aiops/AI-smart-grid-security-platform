@@ -1,7 +1,9 @@
 # 🛡️ AI-Driven Smart Grid Security Platform
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-Enabled-blue.svg)](https://www.docker.com/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
+[![Docker](https://img.shields.io/badge/Docker-Enabled-blue.svg)](https://www.docker.com/) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![SCADA](https://img.shields.io/badge/SCADA%2FICS-Security-red.svg)](#)
 [![EduQual](https://img.shields.io/badge/EduQual-Level%206-purple.svg)](#)
 
