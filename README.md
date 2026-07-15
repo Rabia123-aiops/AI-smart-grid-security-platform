@@ -627,3 +627,187 @@ resilience/resilience_events.log
 | Energy Theft | 98% accuracy using synthetic customer dataset |
 | LSTM | 5 anomalous sequences detected from 99 sequences |
 | Resilience | Load shedding, fault isolation and backup feeder events logged |
+---
+
+# 📊 Monitoring and Visualisation
+
+The prototype uses Prometheus, Grafana, and a custom Flask dashboard to provide real-time visibility into simulated grid behaviour, security events, anomaly detections, and resilience activity.
+
+---
+
+## Prometheus Metrics
+
+The custom exporter publishes smart-grid metrics that Prometheus collects and makes available for monitoring and query analysis.
+
+![Prometheus Query Result](docs/screenshots/prometheus-query-result.png)
+
+---
+
+## Grafana Monitoring Dashboard
+
+Grafana visualises the metrics collected by Prometheus and provides persistent monitoring panels for the prototype.
+
+The dashboard demonstrates:
+
+- voltage and current monitoring
+- grid health status
+- anomaly visibility
+- real-time operational trends
+
+### Prometheus Data Source Connected
+
+![Grafana Data Source Connected](docs/screenshots/grafana-datasource-connected.png)
+
+### Grafana Dashboard — Top Section
+
+![Grafana Dashboard Top](docs/screenshots/grafana-dashboard-top.png)
+
+### Grafana Dashboard — Bottom Section
+
+![Grafana Dashboard Bottom](docs/screenshots/grafana-dashboard-bottom.png)
+
+---
+
+## Flask Live Dashboard
+
+The custom Flask application provides a lightweight operational interface for viewing live smart-grid information.
+
+It displays:
+
+- live voltage and current readings
+- grid health information
+- anomaly alerts
+- resilience-event information
+
+![Flask Live Monitoring Dashboard](docs/screenshots/dashboard-live-monitoring.png)
+
+---
+
+## Docker Environment
+
+Docker Compose is used to run the main infrastructure services in a repeatable environment.
+
+The running services include:
+
+- Conpot
+- Prometheus
+- Grafana
+
+### All Containers Running
+
+![All Containers Running](docs/screenshots/all-containers-running.png)
+
+### Prometheus and Grafana Containers
+
+![Docker Prometheus and Grafana](docs/screenshots/docker-ps-prometheus-grafana.png)
+
+---
+
+# 🔐 DevSecOps Implementation
+
+DevSecOps practices were added to the project to support secure development, repeatable validation, and audit evidence.
+
+The implementation includes:
+
+- Bandit static code analysis
+- pip-audit dependency checking
+- GitHub Actions security workflow
+- automated compliance verification
+- version-controlled reports and evidence
+
+---
+
+## Bandit Static Security Scan
+
+Bandit analyses Python source code for common security weaknesses and unsafe coding patterns.
+
+![Bandit Security Scan](docs/screenshots/devsecops-bandit-scan.png)
+
+---
+
+## pip-audit Dependency Scan
+
+pip-audit checks installed Python dependencies against known vulnerability databases.
+
+![pip-audit Dependency Scan](docs/screenshots/devsecops-pip-audit.png)
+
+---
+
+## GitHub Actions Workflow
+
+The automated security workflow is stored in:
+
+```text
+.github/workflows/security-check.yml
+```
+
+This workflow supports repeatable security checks through version-controlled automation.
+
+---
+
+# 📋 Compliance Support and Audit Evidence
+
+The project demonstrates compliance support through automated checks, logging, monitoring, and preserved implementation evidence.
+
+The custom script is stored in:
+
+```text
+devsecops/compliance_check.py
+```
+
+Generated reports include:
+
+```text
+devsecops/compliance_report.txt
+devsecops/bandit_report.txt
+devsecops/pip_audit_report.txt
+```
+
+The compliance check verifies the presence of important project artefacts such as:
+
+- security scan reports
+- Suricata rules
+- saved AI models
+- resilience logs
+- monitoring evidence
+- documentation
+- licensing information
+
+![DevSecOps Compliance Check](docs/screenshots/devsecops-compliance-check.png)
+
+---
+
+## Compliance Mapping
+
+| Security and governance area | Prototype implementation |
+|---|---|
+| Secure coding | Bandit static security analysis |
+| Dependency management | pip-audit vulnerability checking |
+| Intrusion monitoring | Suricata IDS and alert logs |
+| Audit trail | Suricata alerts and resilience-event logs |
+| Continuous verification | GitHub Actions workflow |
+| Monitoring | Prometheus, Grafana, and Flask |
+| Evidence management | Version-controlled reports and screenshots |
+| Compliance checking | Custom `compliance_check.py` script |
+
+> **Important:** This prototype demonstrates compliance support and audit readiness. It does not claim formal certification against NERC CIP, IEC 62351, ISA/IEC 62443, or any other industrial standard.
+
+---
+
+# ✅ Implementation Achievements
+
+- [x] IEEE 13-Bus grid simulation
+- [x] Conpot SCADA/PLC honeypot
+- [x] Normal and malicious Modbus traffic
+- [x] Suricata intrusion detection
+- [x] Isolation Forest anomaly detection
+- [x] Random Forest classification
+- [x] Synthetic energy-theft detection
+- [x] LSTM Autoencoder anomaly detection
+- [x] Grid-resilience automation
+- [x] Prometheus metrics collection
+- [x] Grafana monitoring dashboard
+- [x] Flask live dashboard
+- [x] Docker-based infrastructure
+- [x] DevSecOps security scans
+- [x] Automated compliance evidence checking
