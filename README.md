@@ -811,3 +811,115 @@ The compliance check verifies the presence of important project artefacts such a
 - [x] Docker-based infrastructure
 - [x] DevSecOps security scans
 - [x] Automated compliance evidence checking
+---
+
+# ⚠️ Project Limitations
+
+This project was developed as an educational prototype for the EduQual Level 6 Diploma in Artificial Intelligence Operations.
+
+The current implementation has several limitations:
+
+- The platform operates on a single Ubuntu virtual machine.
+- Grid behaviour is simulated using the IEEE 13-Bus OpenDSS model.
+- Conpot is used as a simulated PLC rather than physical industrial hardware.
+- Energy-theft detection is evaluated using synthetic smart-meter data.
+- AI models are trained using prototype datasets.
+- The project is intended for laboratory demonstration and research purposes only.
+
+---
+
+# 🚀 Future Improvements
+
+The prototype can be extended into a larger research or enterprise platform by introducing:
+
+- Apache Kafka for real-time event streaming
+- Apache Spark for distributed AI analytics
+- Kubernetes container orchestration
+- MQTT integration for IoT smart meters
+- IEC 61850 protocol support
+- Digital Twin integration
+- Real PLC and RTU connectivity
+- SIEM integration (e.g., Splunk or Microsoft Sentinel)
+- Cloud-native deployment
+- High-availability monitoring architecture
+
+---
+
+# 🏢 Enterprise Deployment Scenario
+
+In an enterprise smart-grid environment, the prototype could be deployed using a layered architecture:
+
+- Multiple substations connected through secure VPNs
+- Redundant SCADA servers
+- Central Security Operations Centre (SOC)
+- Distributed AI inference services
+- Central SIEM platform
+- Redundant Prometheus and Grafana servers
+- Secure API gateways
+- Backup disaster recovery infrastructure
+
+The current repository demonstrates the core concepts required for such a deployment but does not represent a production-ready implementation.
+
+---
+
+# 📖 Lessons Learned
+
+During the development of this prototype, several practical lessons were learned:
+
+- AI becomes more effective when combined with traditional intrusion detection.
+- Simulated industrial environments provide a safe platform for cyber-security experimentation.
+- Continuous monitoring significantly improves operational visibility.
+- Docker simplifies deployment and improves reproducibility.
+- DevSecOps practices improve project quality and audit readiness.
+
+---
+
+# 📚 References
+
+Official documentation used during development:
+
+- OpenDSS
+- Conpot
+- Suricata IDS
+- Prometheus
+- Grafana
+- Docker
+- TensorFlow
+- Scikit-learn
+- pymodbus
+- Python Software Foundation
+
+---
+
+# 🙏 Acknowledgements
+
+This project was developed as part of the EduQual Level 6 Diploma in Artificial Intelligence Operations.
+
+Special thanks to the maintainers of the open-source tools and frameworks that made this prototype possible.
+
+---
+
+# 📄 License
+
+This project is released under the **MIT License**.
+
+See the `LICENSE` file for complete licensing information.
+
+---
+
+# ⭐ Final Project Summary
+
+This repository demonstrates an end-to-end AI-driven smart-grid cyber-security prototype integrating:
+
+- Smart-grid simulation
+- SCADA/ICS security
+- Modbus attack simulation
+- AI-based anomaly detection
+- Energy-theft detection
+- Grid resilience automation
+- Real-time monitoring
+- Docker deployment
+- DevSecOps practices
+- Compliance-support automation
+
+Although developed as an educational prototype, the project demonstrates the integration of multiple technologies commonly used in modern cyber-physical power-system security research.
